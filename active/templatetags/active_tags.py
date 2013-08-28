@@ -33,6 +33,7 @@ def replace_in_query(context, **kwargs):
     query = request.GET.copy()
     for k,v in kwargs.items():
         query[k] = unicode(v)
+    query.pop('_pjax')
     return query.urlencode()
 
 
